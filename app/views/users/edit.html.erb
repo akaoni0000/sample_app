@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>ユーザ-編集</h1>
+    <%= form_with(model: @user, local: true) do |f| %>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">名前</label>
+            <%= f.text_field :name, class:"form-control", id:"formGroupExampleInput", placeholder:"名前を入力してください" %>
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">メールアドレス</label>
+            <%= f.text_field :email, class:"form-control", id:"formGroupExampleInput", placeholder:"メールアドレスを入力してください" %>
+        </div>
+        <%= f.submit "更新", class:"btn btn-success" %>
+    <% end %>
+</div>
