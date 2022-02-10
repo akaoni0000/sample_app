@@ -9,6 +9,11 @@
             <label for="formGroupExampleInput2" class="form-label">メールアドレス</label>
             <%= f.text_field :email, class:"form-control", id:"formGroupExampleInput", placeholder:"メールアドレスを入力してください" %>
         </div>
+         <div class="mb-3">
+            <%= f.file_field :avator, id:"floatingInput", class:"form-control" %>
+            <%= f.label :avator, for:"floationInput" %>
+        </div>
+
         <%= f.submit "更新", class:"btn btn-success" %>
     <% end %>
 </div>

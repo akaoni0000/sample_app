@@ -6,6 +6,8 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
+            NoticeMailMailer.register_user_complete(@user).deliver_now
+            flash[:notice] = "ユーザー登録完了です"
             redirect_to users_path
         else
 
@@ -31,15 +33,17 @@ class UsersController < ApplicationController
     def destroy
         @user = User.find(params[:id])
         @user.destroy
+        flash[:destroy] = "ユーザーを削除しました"
         redirect_to users_path
     end
 
     def index
+        session[:id] = 1
         @users = User.all
     end
 
     private
     def user_params
-        params.require(:user).permit(:name, :email)
+        params.require(:user).permit(:name, :email, :avator)
     end
 end

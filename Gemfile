@@ -56,4 +56,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # オリジナル
+# デバッグ機能
 gem "pry-byebug"
+
+# 画像投稿
+gem 'carrierwave'
+
+#環境変数設定
+gem 'dotenv-rails'
